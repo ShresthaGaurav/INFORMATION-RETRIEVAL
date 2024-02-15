@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+    <h1>Search Results</h1>
+    {% if results %}
+    <p className="text-align:left">Total result found {{ results|length }}  for results <span>'{{ query }}':</span></p>
+    <ul>
+        {% for result in results %}
+        <li>
+            <strong>ID:</strong> {{ loop.index }}<br>
+            <strong>Title:</strong> <a href="{{ result['publication_url'] }}" target="_blank">{{ result['title'] }}</a><br>
+            <strong>Authors:</strong> {{ result['authors'] }}<br>
+            <strong>Year:</strong> {{ result['year'] }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No results found for '{{ query }}'.</p>
+    {% endif %}
+    <button onclick="goHome()">Search new query</button>
+    </div>
+    <footer> Name: gaurav college id 160395 coventry id 10307238</footer>
+</body>
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
+
+</html>

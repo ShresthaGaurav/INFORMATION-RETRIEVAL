@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications Search</title>
+    <style>
+        body {
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+         label {
+            font-size: 25px;
+            color: #007BFF;
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 20px;
+            color: #007BFF;
+            background-color:aliceblue;
+        }
+        button:hover {
+            background-color: #0056b3;
+            color: aliceblue; /* Change color on hover */
+        }
+
+        form {
+            text-align: center;
+
+        }
+
+        input {
+            width: 60%;
+            height: 22px;
+            /* Make the input take up the full width */
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <form action="/search" method="post" className="center">
+        <h1>Centre for Health and Life Sciences Publications Search</h1>
+        <label for="query">Enter your query</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+
+</html>
